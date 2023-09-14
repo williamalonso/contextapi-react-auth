@@ -1,21 +1,9 @@
 import React, {createContext, ReactNode} from 'react';
 import api from '../services/api';
-
-// Aqui estamos definindo a forma dos dados que serão fornecidos pelo Contexto
-interface AuthContextData {
-  signed: boolean;
-  Login(
-    email:string,
-    password:string,
-    navigate:()=>void
-  ): Promise<void>;
-}
+import AuthContextData from '../interfaces/AuthContextData';
+import AuthProviderProps from '../interfaces/AuthProviderProps';
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
-
-interface AuthProviderProps {
-  children: ReactNode;
-}
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   return(
