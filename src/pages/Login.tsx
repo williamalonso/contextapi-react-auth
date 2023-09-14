@@ -1,25 +1,26 @@
-import React, {useState} from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import loginService from '../services/loginService';
+import { AuthContext } from '../contexts/auth';
 
 const Login: React.FC = () => {
-
+  
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
+  const { Login } = useContext(AuthContext); // Importe o contexto de autenticação
 
   async function handleLogin() {
     try {
-      await loginService(email, password, () => {
-        navigate('/home');
+      await Login(email, password, () => {
+        navigate('/home'); // Chame navigate com a rota '/home' como argumento
       });
-    } catch(e) {
+    } catch (e) {
       console.error('Erro ao fazer login bro: ', e);
     }
   }
-  
-  return(
-    <div className="container mx-auto flex flex-col w-40">
+
+  return (
+    <div className="container mx-auto flex flex-col w-40 mt-20">
       <input
         type="text"
         placeholder="E-mail"
@@ -34,7 +35,7 @@ const Login: React.FC = () => {
         onChange={(e) => setPassword(e.target.value)}
         className="mt-5"
       />
-      <button 
+      <button
         onClick={handleLogin}
         className="mt-5 border-double border-4 border-sky-500"
       >

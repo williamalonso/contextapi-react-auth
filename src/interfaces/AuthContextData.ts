@@ -1,10 +1,11 @@
 interface AuthContextData {
   signed: boolean;
-  Login(
-    email:string,
-    password:string,
-    navigate:()=>void
-  ): Promise<void>;
+  user: {
+    email: string;
+    password: string;
+  };
+  Login: (email: string, password: string, navigate: () => void) => Promise<void>;
+  Logout: () => void;
 }
 
 export default AuthContextData;
