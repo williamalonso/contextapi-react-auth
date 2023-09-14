@@ -1,7 +1,7 @@
 import StyledGlobal from './StyledComponents/StyledGlobal';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AuthContext from './contexts/auth';
+import { AuthProvider } from './contexts/auth';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
 import Routing from './Routes';
@@ -11,11 +11,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <AuthContext.Provider value={{signed: true}}>
+    <AuthProvider>
       <BrowserRouter>
         <StyledGlobal />
         <Routing />
       </BrowserRouter>
-    </AuthContext.Provider>
+    </AuthProvider>
   </React.StrictMode>
 );
