@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-  <img src="/public/const.jpg" alt"under construction" title="under construction" width="600" />
+  <img src="/public/home.png" alt"auth system" title="auth system" width="600" />
 </div>
 
 ---
