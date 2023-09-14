@@ -3,7 +3,7 @@
 </h1>
 
 <div align="center">
-  <img src="/public/home.png" alt"auth system" title="auth system" width="600" />
+  <img src="/public/home.png" alt"auth system" title="auth system" width="300" />
 </div>
 
 ---
@@ -22,14 +22,17 @@ It's about implementing an authentication system with React ContextAPI
 This project was developed with the following techs:
 
 - [React](https://react.dev/)
-- [Redux](https://react-redux.js.org/)
+- [ContextAPI](https://legacy.reactjs.org/docs/context.html#api)
 - [Styled Component](https://styled-components.com/)
 - [React Router](https://reactrouter.com/en/main)
+- [Tailwind](https://tailwindcss.com)
+- [TypeScript](https://www.typescriptlang.org)
 
 ---
 
 ### ✨ About project construction:
 
+- We're using ContextAPI to pass data between components;
 - We have a Login page;
 - We have a Home page;
 - We are using TypeScript;
@@ -39,8 +42,6 @@ This project was developed with the following techs:
 ## 🙅 Instalation and uses
 
 The React version is `18.2.0`.
-
-The Redux version is `8.1.2`;
 
 The Styled-Component version is `6.0.5`;
 
