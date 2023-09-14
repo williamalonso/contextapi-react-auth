@@ -1,17 +1,16 @@
-import React, {useContext, useState} from 'react';
-import AuthContext from '../contexts/auth';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import loginService from '../services/loginService';
 
 const Login: React.FC = () => {
 
-  const context = useContext(AuthContext);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
 
   async function handleLogin() {
     try {
-      await context.Login(email, password, () => {
+      await loginService(email, password, () => {
         navigate('/home');
       });
     } catch(e) {

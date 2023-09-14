@@ -1,42 +1,21 @@
-import React, {createContext, ReactNode} from 'react';
-import api from '../services/api';
+import React, {createContext} from 'react';
 import AuthContextData from '../interfaces/AuthContextData';
 import AuthProviderProps from '../interfaces/AuthProviderProps';
+import loginService from '../services/loginService';
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
+const initialValue: AuthContextData = {
+  signed: false,
+  Login: loginService,
+}
+
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   return(
-    <AuthContext.Provider value={{ signed: true, Login }}>
+    <AuthContext.Provider value={initialValue}>
       {children}
     </AuthContext.Provider>
   );
-}
-
-// chamar a api
-async function Login(email: string, password: string, navigate: () => void) {
-  try {
-
-    const fakeData = {
-      data: {
-        token: 'DHFDHUDFH-DFDFJDH',
-        user: {
-          email: email,
-          password: password,
-        }
-      }
-    }
-
-    await new Promise( (resolve) => setTimeout(resolve, 1000) );
-
-    console.log('login bem sucedido:', fakeData);
-
-    navigate();
-
-    
-  } catch(e) {
-    console.error('Erro ao fazer login: ', e);
-  }
 }
 
 export default AuthContext;
