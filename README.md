@@ -13,7 +13,7 @@
 
 ### 🤔 About the Project?
 
-It's about implementing an authentication system with React ContextAPI
+It's about implementing an authentication system with React ContextAPI using TypeScript
 
 ---
 
@@ -53,7 +53,7 @@ If you wish, clone or download this repositry:
 
 ```
 # Clone the repository
-$ git clone git@github.com:williamalonso/contextapi-react-auth.git
+$ git clone git@github.com:williamalonso/contextapi-react-auth-ts.git
 ```
 
 After downloading or cloning, run the command `npm i`.
